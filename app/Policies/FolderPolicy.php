@@ -4,14 +4,12 @@ namespace App\Policies;
 
 use App\User;
 use App\Folder;
-use Illuminate\Auth\Access\HandlesAuthorization;
+
 
 class FolderPolicy
 {
-    use HandlesAuthorization;
-
     /**
-     * Create a new policy instance.
+     * フォルダの閲覧制限
      * @param User $user
      * @param Folder $folder 
      * @return bool
