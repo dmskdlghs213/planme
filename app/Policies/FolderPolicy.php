@@ -9,12 +9,12 @@ use App\Folder;
 class FolderPolicy
 {
     /**
-     * フォルダの閲覧制限
+     * フォルダの閲覧権限
      * @param User $user
-     * @param Folder $folder 
+     * @param Folder $folder
      * @return bool
      */
-    public function view(User $user,Folder $folder)
+    public function view(User $user, Folder $folder)
     {
         return $user->id === $folder->user_id;
     }

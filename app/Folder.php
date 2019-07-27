@@ -11,6 +11,6 @@ class Folder extends Model
     {
         //第１引数＝関連するモデル名、第2引数=関連するテーブルがもつ外部キーカラム名、
         //第3引数=定義されてる側のテーブルがもつ外部キーに紐づけられたカラム名
-        return $this->hasMany('App\Task','folder_id','id');
+        return $this->hasMany('App\Task');
     }
 }

@@ -17,6 +17,21 @@ class Task extends Model
     ];
 
     /**
+     * 状態のラベル
+     * @return string
+     */
+    public function getStatusLabelAttribute()
+    {
+        // 状態値
+        $status = $this->attributes['status'];
+        // 定義されていなければ空文字を返す
+        if (!isset(self::STATUS[$status])) {
+            return '';
+        }
+        return self::STATUS[$status]['label'];
+    }
+
+    /**
      * 状態を表すHTMLクラス
      * @return string
      */
@@ -33,6 +48,10 @@ class Task extends Model
         return self::STATUS[$status]['class'];
     }
 
+    /**
+     * 整形した期限日
+     * @return string
+     */
     public function getFormatDueDataAttribute()
     {
         //期限日の整形

@@ -13,14 +13,16 @@ use App\Http\Requests\EditTask;
 
 class TaskController extends Controller
 {
+    /**
+     * タスク一覧
+     * @param Folder $folder
+     * @return \Illuminate\View\View
+     */
+
     public function index(Folder $folder)
     {
         #全てのフォルダを取得する
         #$folders = Folder::all();
-
-        if (Auth::user()->id !== $folder->user_id) {
-            abort(403);
-        }
 
         //ユーザーのフォルダを取得する
         $folders = Auth::user()->folders()->get();
@@ -28,7 +30,6 @@ class TaskController extends Controller
 
         #選ばれたフォルダを取得する(フォルダテーブルから検索して値を返す)
         #$current_folder = Folder::find($id);
-
 
         #選ばれたフォルダに紐付くタスクを取得する
         $tasks = $folder->tasks()->get();
@@ -43,12 +44,26 @@ class TaskController extends Controller
         ]);
     }
 
+    /**
+     * タスク作成フォーム
+     * @param Folder $folder
+     * @return \Illuminate\View\View 
+     */
+
     public function showCreateForm(Folder $folder)
     {
         return view('tasks/create', [
             'folder_id' => $folder->id,
         ]);
     }
+
+    /**
+     * タスク作成
+     * @param Folder $folder
+     * @param CreateTask $request 
+     * @return \Illuminate\Http\RedirectResponse 
+     */
+
 
     public function create(Folder $folder, CreateTask $request)
     {
@@ -68,6 +83,14 @@ class TaskController extends Controller
         ]);
     }
 
+
+    /**
+     * タスク編集フォーム
+     * @param Folder $folder
+     * @param Task $task 
+     * @return \Illuminate\View\View
+     */
+
     public function showEditForm(Folder $folder, Task $task)
     {
 
@@ -77,6 +100,14 @@ class TaskController extends Controller
             'task' => $task,
         ]);
     }
+
+    /**
+     * タスク編集
+     * @param Folder $folder
+     * @param Task $task 
+     * @param EditTask $request
+     * @return \Illuminate\Http\RedirectResponse 
+     */
 
     public function edit(Folder $folder, Task $task, EditTask $request)
     {
@@ -98,6 +129,11 @@ class TaskController extends Controller
         ]);
     }
 
+    /**
+     * フォルダとタスクの関連性があるかどうか調べる
+     * @param Folder $folder
+     * @param Task $task 
+     */
 
     public function checRelation(Folder $folder, Task $task)
     {
