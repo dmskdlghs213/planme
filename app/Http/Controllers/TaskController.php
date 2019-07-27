@@ -78,6 +78,8 @@ class TaskController extends Controller
         //現在保存されてるフォルダに新しいタスクを追加して保存する
         #$current_folder->tasks()->save($task);
 
+        $folder->tasks()->save($task);
+
         return redirect()->route('tasks.index', [
             'id' => $folder->id,
         ]);
