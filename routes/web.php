@@ -24,7 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/folders/create', 'FolderController@create');
 
 
-    Route::group(['middleware' => 'can:view.folder'], function () {
+    Route::group(['middleware' => 'can:view,folder'], function () {
         //タスクとフォルダの一覧表示
         Route::get('/folders/{folder}/tasks', 'TaskController@index')->name('tasks.index');
         //タスクの新規作成と表示
