@@ -39,7 +39,6 @@
                             <th>期限</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         @foreach($tasks as $task)
                         <tr>
@@ -52,9 +51,7 @@
                         </tr>
                         @endforeach
                     </tbody>
-
                 </table>
-
             </div>
         </div>
     </div>

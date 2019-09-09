@@ -32,8 +32,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/folders/{folder}/tasks/create', 'TaskController@create');
 
         //タスクの編集機能
-        Route::get('/folders/{folder}/tasks/{task_id}/edit', 'TaskController@showEditForm')->name('tasks.edit');
-        Route::post('/folders/{folder}/tasks/{task_id}/edit', 'TaskController@edit');
+        
+        Route::get('/folders/{folder}/tasks/{task}/edit', 'TaskController@showEditForm')->name('tasks.edit');
+        Route::post('/folders/{folder}/tasks/{task}/edit', 'TaskController@edit');
     });
     
 });

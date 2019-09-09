@@ -97,7 +97,6 @@ class TaskController extends Controller
     {
 
         $this->checkRelation($folder, $task);
-
         return view('tasks/edit', [
             'task' => $task,
         ]);
@@ -106,38 +105,27 @@ class TaskController extends Controller
     /**
      * タスク編集
      * @param Folder $folder
-     * @param Task $task 
+     * @param Task $task
      * @param EditTask $request
-     * @return \Illuminate\Http\RedirectResponse 
+     * @return \Illuminate\Http\RedirectResponse
      */
-
     public function edit(Folder $folder, Task $task, EditTask $request)
     {
-
-        //リクエストされたIDでタスクデータを取得(編集対象データ)
-        #$task = Task::find($task_id);
-
         $this->checkRelation($folder, $task);
-
-        //編集対象のタスクでーたに入力値を詰めてsaveする
         $task->title = $request->title;
         $task->status = $request->status;
         $task->due_date = $request->due_date;
         $task->save();
-
-        //編集対処のタスクが属するタスク一覧画面へリダイレクト
         return redirect()->route('tasks.index', [
             'id' => $task->folder_id,
         ]);
     }
-
     /**
-     * フォルダとタスクの関連性があるかどうか調べる
+     * フォルダとタスクの関連性があるか調べる
      * @param Folder $folder
-     * @param Task $task 
+     * @param Task $task
      */
-
-    public function checRelation(Folder $folder, Task $task)
+    private function checkRelation(Folder $folder, Task $task)
     {
         if ($folder->id !== $task->folder_id) {
             abort(404);
