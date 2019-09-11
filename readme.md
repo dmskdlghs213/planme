@@ -1,4 +1,4 @@
-# planyou
+# planme
 laravelで作成したログイン機能がついたtodoアプリケーションです。
 
 ## 使用技術
