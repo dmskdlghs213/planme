@@ -11,7 +11,7 @@ body {
 
 .my-navbar {
   align-items: center;
-  background: #333;
+  background: white;
   display: flex;
   height: 6rem;
   justify-content: space-between;
@@ -20,17 +20,24 @@ body {
 }
 
 .my-navbar-brand {
-  font-size: 18px;
+  font-size: 35px;
+  color:steelblue;
+
 }
 
-.my-navbar-brand,
-.my-navbar-item {
-  color: #8c8c8c;
+.row{
+  margin-top:30px;
 }
+
+.my-navbar-control{
+  font-size:20px;
+  color:steelblue;
+}
+
 
 .my-navbar-brand:hover,
 a.my-navbar-item:hover {
-  color: #ffffff;
+  color: blue;
 }
 
 .table td:nth-child(2),
@@ -43,4 +50,29 @@ a.my-navbar-item:hover {
 .form-control[disabled],
 .form-control[readonly] {
   background-color: #fff;
+  height: 40px;
+}
+
+.form-control{
+  width: 360px;
+  padding:20px 0px 20px 0px;
+  height: 50px;
+}
+
+
+
+.col col-md-4{
+  display: inline;
+  text-align: center;
+}
+
+.panel panel-default{
+  display: flex;
+
+}
+
+ 
+
+.list-group{
+  justify-content: flex-start;
 }

@@ -1,0 +1,154 @@
+.container {
+    padding-right: 40px;
+    padding-left: 40px;
+    height: 400px;
+}
+
+
+.panel-default>.panel-heading{
+    background-color:steelblue;
+    
+}
+
+.panel-default>.panel-heading p{
+color:white;
+}
+
+.list-group col-md-6 {
+    margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    margin: 0 auto;}
+  
+  /*タブのスタイル*/
+  .list-group-item {
+    width: 100%;
+    height: 50px;
+    
+    background-color: #d9d9d9;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    color: #5ab4bd;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.1s ease;
+  }
+  .list-group-item:hover {
+    opacity: 0.75;
+    
+  }
+
+
+  a.list-group-item.active{
+    background-color:steelblue;
+  }
+  
+  /*ラジオボタンを全て消す*/
+  input[name="tab_item"] {
+    display: none;
+  }
+  
+  /*タブ切り替えの中身のスタイル*/
+  .tab_content {
+    display: none;
+    padding: 40px 40px 0;
+    clear: both;
+    overflow: hidden;
+  }
+  
+  
+  /*選択されているタブのコンテンツのみを表示*/
+  #all:checked ~ #all_content,
+  #programming:checked ~ #programming_content,
+  #design:checked ~ #design_content {
+    display: block;
+  }
+  
+  /*選択されているタブのスタイルを変える*/
+  .tabs input:checked + .tab_item {
+    background-color: steelblue;
+    color: #fff;
+  }
+
+#object{
+    visibility: hidden;
+    background-color: #fe5652;
+
+}
+  
+
+        
+.hidden_box {
+    margin: 2em 0;
+    padding: 0;
+}
+
+label[for=label]{
+    display: block;
+    margin: 20px 20px 20px 20px;
+}
+
+
+
+/*ボタン装飾*/
+.hidden_box label {
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    background: #efefef;
+    border-radius: 5px;
+    cursor :pointer;
+    transition: .5s;
+}
+
+/*アイコンを表示*/
+.hidden_box label:before {
+    display: inline-block;
+    content: '\f078';
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+    transition: 0.4s;
+
+}
+
+/*ボタンホバー時*/
+.hidden_box label:hover {
+    background: steelblue;
+    color:white;
+}
+
+.a.list-group-item.active{
+    color: #8EB8FF;
+}
+
+/*アイコンを切り替え*/
+.hidden_box input:checked ~ label:before {
+     content: '\f00d';
+     -webkit-transform: rotate(360deg);
+     transform: rotate(360deg);
+     color: #8EB8FF;
+}
+
+/*チェックは見えなくする*/
+.hidden_box input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box .hidden_show {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.hidden_box input:checked ~ .hidden_show {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
