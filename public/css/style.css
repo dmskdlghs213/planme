@@ -3,6 +3,11 @@
 
 body {
   background-color: #f4f7f8;
+  font-family:sans-serif;
+}
+
+header{
+  position: relative;
 }
 
 .navbar {
@@ -16,11 +21,12 @@ body {
   height: 6rem;
   justify-content: space-between;
   padding: 0 2%;
-  margin-bottom: 3rem;
+  
 }
 
 .my-navbar-brand {
-  font-size: 35px;
+  font-size: 30px;
+  font-weight: bold;
   color:steelblue;
 
 }
@@ -30,7 +36,7 @@ body {
 }
 
 .my-navbar-control{
-  font-size:20px;
+  font-size:15px;
   color:steelblue;
 }
 
@@ -54,7 +60,7 @@ a.my-navbar-item:hover {
 }
 
 .form-control{
-  width: 360px;
+  
   padding:20px 0px 20px 0px;
   height: 50px;
 }

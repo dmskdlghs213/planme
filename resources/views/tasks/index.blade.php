@@ -6,16 +6,7 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 
-<body style="background-image:url('/image/UNADJUSTEDNONRAW_thumb_346.jpg');
-       background-repeat:no-repeat;
-       background-attachment: fixed; 
-       background-size: cover;
-       background-position: center center;
-
-           
-       ">
-
-
+<body class="image" >
 
     <div class="container">
 

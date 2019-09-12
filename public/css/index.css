@@ -1,3 +1,25 @@
+.image{
+  background-image:url('/image/UNADJUSTEDNONRAW_thumb_196.jpg');
+  background-repeat:no-repeat;
+  background-attachment: fixed; 
+  background-size: cover;
+  background-position: center center;
+     
+}
+
+.image:before{
+  background: inherit;
+  content: '';
+  filter: blur(1px);
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+}
+
+
+
 .container {
     padding-right: 40px;
     padding-left: 40px;
@@ -121,7 +143,7 @@ label[for=label]{
 }
 
 .a.list-group-item.active{
-    color: #8EB8FF;
+    color: #efefef;
 }
 
 /*アイコンを切り替え*/
@@ -129,7 +151,7 @@ label[for=label]{
      content: '\f00d';
      -webkit-transform: rotate(360deg);
      transform: rotate(360deg);
-     color: #8EB8FF;
+     color: #efefef;
 }
 
 /*チェックは見えなくする*/
